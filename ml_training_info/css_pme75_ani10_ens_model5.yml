@@ -1,0 +1,40 @@
+data_config:
+  augment_bool: 'True'
+  batch_size: 512
+  dtype: torch.float32
+  input_vars:
+  - pme
+  - wtd
+  - topo_index
+  - elev
+  - slope_x
+  - slope_y
+  num_workers: 2
+  output_vars:
+  - ksat
+  overlap: 26
+  random_seed: 0
+  test_inds: 33, 34, 20, 49, 5, 38, 11, 23, 40, 15
+  train_inds: 2, 3, 4, 6, 8, 9, 10, 13, 16, 17, 18, 19, 21, 22, 24, 25, 26, 29, 30,
+    31, 32, 35, 37, 39, 41, 42, 44, 45, 46, 48
+  unet_layers: 4
+  valid_inds: 43, 1, 28, 14, 36, 12, 0, 27, 47, 7
+  width: 64
+last_loss: 0.8771401377593946
+metrics_file: /home/at8471/c1_inversion/ml_training/outputs/logK_css_pme75_ani10/css_pme75_ani10_ens_model5_metrics.csv
+model_config:
+  activation_func: nn.Tanh
+  base_channels: 56
+  gamma: NONE
+  input_size: 6
+  kernel: 5
+  lambda: 2
+  learning_rate: NONE
+  loss_func: F.mse_loss
+  max_epochs: 150
+  max_lr: 0.02
+  optimizer: AdamW
+  output_size: 1
+  step_size: NONE
+  three-phase: two_phase
+weights_file: /home/at8471/c1_inversion/ml_training/outputs/logK_css_pme75_ani10/css_pme75_ani10_ens_model5.pt
